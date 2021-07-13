@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/83fd819260.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./ASSETS/whatsapp.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light whatsapp-navbar sticky-top" id="main-nav">
+      <div class="container-fluid">
+        <h4 href="#">Whatsapp</h4>
+        <button class="navbar-toggler select-profiles" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" id="span-profiles"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <div class="container-fluid mt-3" id="profiles">
+                  <p>Seleccione un Usuario:</p>
+                  <div class="row pb-3" id="lista-usuarios">
+                      <!-- <div class="col-2">
+                          <img src="./ASSETS/profile-pics/androide_16.jpg" class="img-fluid rounded-circle" alt="">
+                      </div> -->
+                  </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light whatsapp-navbar p-0" id="nav-chat-options">
+        <div id="opciones-chats">
+            <div class="row" id="opciones-chats">
+                <div class="col-5 option-selected" id="chat-option">
+                    <button class="btn btn-link" onclick="selectOptionChat()">CHATS</button>
+                </div>
+                <div class="col-7 option-unselected" id="contacts-option">
+                    <button class="btn btn-link" onclick="selectOptionContacts()">CONTACTS</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light whatsapp-navbar d-none sticky-top" id="nav-chat">
+        <div class="row mt-3">
+            <div class="offset-1 col-2 mt-3">
+              <i class="fas fa-arrow-left" onclick="regresarMain()"></i>
+            </div>
+            <div class="col-8" id="informacion-Contacto-Chat">
+                <div class="row g-2">
+                    <div class="col-6">
+                        <img src="./ASSETS/profile-pics/vegeta.jpg" class="img-fluid rounded-circle" alt="">
+                    </div>
+                    <div class="col-6">
+                        <p><strong>Vegeta</strong></p>
+                        <p>Online</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </nav>
+
+    <main class="container-fluid chats" id="main">
+        <div id="chats-page">
+            <div class="row mt-0" id="chats-usuario">
+                <!-- <div class="col-12">
+                    <div class="row mt-4 pb-3" id="info-chats">
+                        <div class="col-3"><img src="./ASSETS/profile-pics/vegeta.jpg" class="img-fluid rounded-circle" alt=""></div>
+                        <div class="col-6">
+                            <p><strong>Vegeta</strong></p>
+                            <p>Vegeta: Kakaroto!!!</p>
+                        </div>
+                        <div class="col-3">
+                            <span>9:50 PM</span>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div id="contacts-page" class="container-fluid d-none">
+            <div class="text-center">
+                <button type="button" onclick="cargarContactosAñadir()" class="btn btn-success my-4" data-bs-toggle="modal" data-bs-target="#modalContactoNuevo">
+                    <i class="fas fa-plus"></i> Añadir Contacto
+                </button>
+            </div>
+            
+            <div class="row pb-3" id="contacts">
+                <!-- <div class="col-12">
+                    <div class="row mt-3 pb-3" id="info-contacto">
+                        <div class="col-3"><img src="./ASSETS/profile-pics/vegeta.jpg" class="img-fluid rounded-circle" alt=""></div>
+                        <div class="col-6" style="color: #ACB5BC;"><h5>Vegeta</h5></div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+        <div id="chats-mensajes" class="d-none pt-2 pb-5">
+            <div class="container-fluid" id="mensajes">
+                
+            </div>
+        </div>
+        
+    </main>
+    
+    <div class="modal fade" id="modalContactoNuevo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <select name="" id="slc-contacto" class="form-select">
+
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" onclick="nuevoContacto()">Nuevo Contacto</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    
+    <nav class="navbar navbar-dark bg-dark fixed-bottom d-none" id="message-bar">
+      <div class="container">
+        <button type="button" class="btn btn-lg btn-link" onclick="mostrarStickers()">
+            <i class="far fa-sticky-note"></i>
+        </button>
+        <input type="text" id="mensaje-whatsapp" class="form-control-sm" style="width: 250px;">
+        <button class="btn btn-success" id="btn-enviar-mensaje" onclick="enviarNuevoMensaje()"><i class="fab fa-telegram-plane"></i></button>
+      </div>
+    </nav>
+    
+    <div class="d-none" id="stickers">
+        <div class="card" id="card-stickers" style="background-color: #3D505E;">
+            <div class="card-body">
+                <div class="header text-end"><i class="fas fa-times" onclick="ocultarStickers()"></i></div>
+                <div class="row" id="lista-stickers">
+                    <div class="col-3"><img src="./ASSETS/stickers/1.webp" class="img-fluid" alt=""></div>
+                    <div class="col-3"><img src="./ASSETS/stickers/2.webp" class="img-fluid" alt=""></div>
+                    <div class="col-3"><img src="./ASSETS/stickers/3.webp" class="img-fluid" alt=""></div>
+                    <div class="col-3"><img src="./ASSETS/stickers/4.webp" class="img-fluid" alt=""></div>
+                    <div class="col-3"><img src="./ASSETS/stickers/5.webp" class="img-fluid" alt=""></div>
+                    <div class="col-3"><img src="./ASSETS/stickers/6.webp" class="img-fluid" alt=""></div>
+                    <div class="col-3"><img src="./ASSETS/stickers/7.webp" class="img-fluid" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function ocultarStickers(){
+            document.getElementById('stickers').classList.add('d-none');
+        }
+    </script>
+    <script src="./JS/jquery-3.6.0.min.js"></script>  
+    <script src="./JS/controlador.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

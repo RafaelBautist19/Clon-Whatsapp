@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    border: 0;
+}
+
+.navbar-light{
+    color: #ACB5BC;
+}
+
+.select-profiles{
+    background-color: #3D505E;
+}
+
+.whatsapp-navbar{
+    background-color: #1D2A32; 
+    color: #ACB5BC;
+}
+
+.navbar-brand{
+    color: #ACB5BC;
+}
+
+main{
+    min-height: 650px;
+}
+
+.emisor{
+    background-color: #105248;
+}
+
+.receptor{
+    background-color: #3C3C3E;
+}
+
+#profiles{
+    background-color: #3D505E;
+    border-radius: 20px;
+}
+
+
+#opciones-chats{
+    margin: 0 auto;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.option-selected button{
+    text-decoration: none;
+    color:#2F6661;
+    font-weight: 500;
+    border-bottom: 5px solid #2F6661;
+}
+
+.option-selected button:hover{
+    color:#2F6661;
+}
+
+
+.option-unselected button{
+    text-decoration: none;
+    color: #ACB5BC;
+    font-weight: 500;
+}
+
+.option-unselected button:hover{
+    color: #ACB5BC;
+}
+
+
+#info-chats{
+    color: #ACB5BC;
+    border-bottom: 1px solid #233A48;
+}
+
+#info-contacto{
+    border-bottom: 1px solid #233A48;
+}
+
+.chats{
+    background-color: #101D25;
+}
+
+.background-chat{
+    background-image: url('../ASSETS/stickers/bg.jpg');
+    background-size: cover;
+}
+
+.navbar-light .navbar-toggler-icon{
+    background-image: url('../ASSETS/sticker-icon.svg');
+    border: none;
+}
+
+#card-stickers{
+    position: fixed; 
+    bottom: 0;
+    margin-bottom: 50px;
+    width: 100%;
+    height: 200px;
+}
