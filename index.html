@@ -38,7 +38,7 @@
     <nav class="navbar navbar-expand-lg navbar-light whatsapp-navbar p-0" id="nav-chat-options">
         <div id="opciones-chats">
             <div class="row" id="opciones-chats">
-                <div class="col-5 option-selected" id="chat-option">
+                <div class="col-5 option-selected" id="chat-option">	
                     <button class="btn btn-link" onclick="selectOptionChat()">CHATS</button>
                 </div>
                 <div class="col-7 option-unselected" id="contacts-option">
@@ -51,7 +51,7 @@
     <nav class="navbar navbar-expand-lg navbar-light whatsapp-navbar d-none sticky-top" id="nav-chat">
         <div class="row mt-3">
             <div class="offset-1 col-2 mt-3">
-              <i class="fas fa-arrow-left" onclick="regresarMain()"></i>
+              <i class="fa-solid fa-arrow-left" onclick="regresarMain()"></i>
             </div>
             <div class="col-8" id="informacion-Contacto-Chat">
                 <div class="row g-2">
@@ -88,7 +88,7 @@
         <div id="contacts-page" class="container-fluid d-none">
             <div class="text-center">
                 <button type="button" onclick="cargarContactosAñadir()" class="btn btn-success my-4" data-bs-toggle="modal" data-bs-target="#modalContactoNuevo">
-                    <i class="fas fa-plus"></i> Añadir Contacto
+                    <i class="fa-solid fa-plus"></i> Añadir Contacto
                 </button>
             </div>
             
@@ -132,17 +132,17 @@
     <nav class="navbar navbar-dark bg-dark fixed-bottom d-none" id="message-bar">
       <div class="container">
         <button type="button" class="btn btn-lg btn-link" onclick="mostrarStickers()">
-            <i class="far fa-sticky-note"></i>
+            <i class="fa-regular fa-sticky-note"></i>
         </button>
         <input type="text" id="mensaje-whatsapp" class="form-control-sm" style="width: 250px;">
-        <button class="btn btn-success" id="btn-enviar-mensaje" onclick="enviarNuevoMensaje()"><i class="fab fa-telegram-plane"></i></button>
+        <button class="btn btn-success" id="btn-enviar-mensaje" onclick="enviarNuevoMensaje()"><i class="fa-solid fa-paper-plane-top"></i></button>
       </div>
     </nav>
     
     <div class="d-none" id="stickers">
         <div class="card" id="card-stickers" style="background-color: #3D505E;">
             <div class="card-body">
-                <div class="header text-end"><i class="fas fa-times" onclick="ocultarStickers()"></i></div>
+                <div class="header text-end"><i class="fa-solid fa-times" onclick="ocultarStickers()"></i></div>
                 <div class="row" id="lista-stickers">
                     <div class="col-3"><img src="./ASSETS/stickers/1.webp" class="img-fluid" alt=""></div>
                     <div class="col-3"><img src="./ASSETS/stickers/2.webp" class="img-fluid" alt=""></div>
